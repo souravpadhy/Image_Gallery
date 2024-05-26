@@ -1,0 +1,230 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .logo-container {
+        text-align: center;
+        
+    }
+
+    .animated-title {
+        font-size: 24px;
+    }
+
+    .books-section {
+        padding: 20px;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-gap: 10px;
+    }
+
+    .lower-text-container {
+        margin-top: 20px;
+    }
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    background-color: #ffffff;
+}
+
+.logo-container {
+    position: relative;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #def057; 
+    opacity: 0; 
+    animation: fadeInLogo 4s forwards; 
+    margin-left: 100px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.animated-title {
+    font-size: 36px;
+    color: #333;
+    margin-top: 10px;
+    opacity: 0;
+    animation: slideInFromLeft 1s forwards; 
+    text-align: center; 
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.slider-container {
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 45px;
+    background-color: #fff;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide:hover img {
+    transform: scale(1.15); 
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #fff;
+    text-align: center;
+    padding: 20px; 
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide:hover .description {
+    opacity: 1; 
+}
+
+
+.prev, .next, .prev-image, .next-image {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px; 
+}
+
+.slide {
+    position: relative;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.prev, .prev-image {
+    left: 10px; 
+}
+
+.next, .next-image {
+    right: 10px; 
+}
+
+.navigation button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.books-heading{
+    margin-top: 100px;
+    color: rgb(250, 124, 28);
+    width: 50px;
+    size: inherit;
+}
+.books-section {
+    max-width: 1200px;
+    margin: 20px auto; 
+    padding: 0 20px; 
+    margin-bottom: 200px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-gap: 20px;
+}
+
+.book {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.book img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.lower-text-container {
+    text-align: top;
+    margin-top: 40px;
+}
+
+.lower-text {
+    font-size: 18px;
+    color: #333; 
+    text-align: end;
+    
+}
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 5;
+    }
+}
